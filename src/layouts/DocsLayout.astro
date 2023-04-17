@@ -14,7 +14,7 @@ const Catalog =[
 */
 
 async function getCatalog(){
-    const db = new PocketBase('http://127.0.0.1:8090');
+    const db = new PocketBase('https://f0aa-124-121-156-4.ngrok-free.app');
     const data = await db.collection('product').getList();
     return data?.items as any[];
 }
