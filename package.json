@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -20,6 +20,7 @@
     "@types/react-dom": "^18.0.10",
     "astro": "^1.8.0",
     "framer-motion": "^8.0.2",
+    "pocketbase": "^0.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "remark-directive": "^2.0.1",

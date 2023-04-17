@@ -58,3 +58,9 @@
 .callout-note {
   @apply text-gray-700 bg-gray-100 border-gray-500 ;
 }
+
+.link-card-grid {
+  display: grid;
+  padding: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}

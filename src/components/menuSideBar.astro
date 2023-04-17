@@ -1,0 +1,78 @@
+---
+const sideMenu = [
+    {"label": "Laundry Machine", "url": "/"},
+    //{"label": "Changelog", "url": "/changelog"},
+    {"label": "Spare Parts", "url": "/pricing"},
+    {"label": "Software", "url": "/docs"},
+    {"label": "Service", "url": "/docs"},
+];
+---
+	<body>
+		<div class="w-64">
+                        <ul class="category-list-aside">
+                                {sideMenu.map(sideMenu => (
+                                        <li>
+                                            {sideMenu.active && (
+                                                <a
+                                                   class="block py-2 pl-3 pr-4 text-white bg-primary-800 rounded lg:bg-transparent lg:text-primary-800 lg:p-0"
+                                                   aria-current="page"
+                                                >{sideMenu.label}</a>
+                                            )}
+                                            {!sideMenu.active && (
+                                                <a
+                                                   class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-800 lg:p-0"
+                                                >{sideMenu.label}</a>
+                                            )}
+                                        </li>
+                                    ))}
+                        </ul>
+                </div>
+        </body>
+
+<style>
+
+	
+        .category-list-aside {
+                background: #f5f5f5;
+                padding: 0;
+                list-style: none;
+                -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .category-list-aside > li {
+                position: relative;
+                -moz-transition: all 0.1s ease;
+                -o-transition: all 0.1s ease;
+                -webkit-transition: all 0.1s ease;
+                transition: all 0.1s ease;
+                border-bottom: 1px solid #eaeae9;
+        }
+        .category-list-aside > li:last-child {
+                border-bottom: 0; }
+        .category-list-aside > li a {
+                display: block;
+                padding: 15px 20px 15px 22px;
+                font-size: 16px;
+                line-height: 26px;
+                font-family: "Rubik", sans-serif;
+                font-weight: 400;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: #454545; }
+        .category-list-aside > li:hover, .category-list-aside > li.active {
+        background-color: #009cdc; }
+        .category-list-aside > li:hover a, .category-list-aside > li.active a {
+                color: #fff; }
+        .category-list-aside small {
+                display: block;
+                font-size: 10px;
+                line-height: 5px; }
+        ul {
+                display: block;
+                list-style-type: disc;
+                margin-block-start: 1em;
+                margin-block-end: 0em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 0px;
+        }
+</style>
