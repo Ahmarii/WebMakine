@@ -1,48 +1,59 @@
 ---
-import Layout from './Layout.astro'
-import Card from '../components/Card.astro'
-import MenuSideBar from '../components/menuSideBar.astro'
-import PocketBase from 'pocketbase';
+import Layout from "./Layout.astro";
+import Card from "../components/Card.astro";
+import MenuSideBar from "../components/menuSideBar.astro";
+import PocketBase from "pocketbase";
 
 const { frontmatter, headings } = Astro.props;
-/*
-const Catalog =[
-    {"title": "E01", "body": "Learn how Astro works and explore the official API docs.","tag":""},
-    {"title": "E02", "body": "Supercharge your project with new frameworks and libraries.","tag":""},
-    {"title": "E03", "body": "Learn how Astro works and explore the official API docs.","tag":""},
-];
-*/
 
-async function getCatalog(){
-    const db = new PocketBase('https://01c0-124-121-156-4.ngrok-free.app');
-    const data = await db.collection('product').getList();
-    return data?.items as any[];
+const Catalog = [
+  {
+    title: "E01",
+    body: "Learn how Astro works and explore the official API docs.",
+    tag: "",
+  },
+  {
+    title: "E02",
+    body: "Supercharge your project with new frameworks and libraries.",
+    tag: "",
+  },
+  {
+    title: "E03",
+    body: "Learn how Astro works and explore the official API docs.",
+    tag: "",
+  },
+];
+
+async function getCatalog() {
+  const db = new PocketBase("http://127.0.0.1:8090/api/");
+  const data = await db.collection("product").getList();
+  return data?.items as any[];
 }
 
-const Catalog= await getCatalog();
+//const Catalog = await getCatalog();
 ---
+
 <Layout title={frontmatter.title}>
-    <div class="border-gray-200 shadow-inner border-t">
-        <div class="max-w-screen-xl mx-auto flex">
-            <div class="grid grid-cols-4 box-border p-10">
- 
-                <MenuSideBar></MenuSideBar>
-    
-                <div class="col-span-3">
-    
-                <ul role="list" class="link-card-grid">
-                    {
-                    Catalog.map(Catalog => (
-                        <Card
-                            href="https://docs.astro.build/"
-                            title={Catalog.title}
-                            body={Catalog.body}
-                            img="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        />   
-                    ))
-                    }
-                    
-                </ul>
+  <div class="border-gray-200 shadow-inner border-t">
+    <div class="max-w-screen-xl mx-auto flex">
+      <div class="grid grid-cols-4 box-border p-10">
+        <MenuSideBar />
+
+        <div class="col-span-3">
+          <ul role="list" class="link-card-grid">
+            {
+              Catalog.map((Catalog) => (
+                <Card
+                  href="https://docs.astro.build/"
+                  title={Catalog.title}
+                  body={Catalog.body}
+                  img="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                />
+              ))
+            }
+          </ul>
         </div>
+      </div>
     </div>
+  </div>
 </Layout>

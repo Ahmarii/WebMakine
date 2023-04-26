@@ -1,10 +1,10 @@
 ---
 const pathname = Astro.url.pathname;
 const links = [
-    {"label": "Home", "url": "/"},
+    {"label": "หน้าหลัก", "url": "/th"},
     //{"label": "Changelog", "url": "/changelog"},
-    {"label": "About", "url": "/pricing"},
-    {"label": "Product", "url": "/docs"},
+    {"label": "เกี่ยวกับ", "url": "/pricing"},
+    {"label": "ผลิตภัณฑ์", "url": "/docs"},
 ];
 links.forEach(link => link.active = (link.url == "/") ? pathname == link.url : pathname.startsWith(link.url));
 ---
@@ -46,7 +46,7 @@ links.forEach(link => link.active = (link.url == "/") ? pathname == link.url : p
                 
                 
             </div>
-            <div class="lg:order-3"><a href="#">EN</a> | <a href="/th">TH</a></div>
+            <div class="lg:order-3"><a href="/">EN</a> | <a href="">TH</a></div>
             
         </div>
         
