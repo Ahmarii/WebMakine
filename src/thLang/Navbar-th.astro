@@ -3,7 +3,7 @@ const pathname = Astro.url.pathname;
 const links = [
     {"label": "หน้าหลัก", "url": "/th"},
     //{"label": "Changelog", "url": "/changelog"},
-    {"label": "เกี่ยวกับ", "url": "/pricing"},
+    {"label": "เกี่ยวกับ", "url": "/th/pricing"},
     {"label": "ผลิตภัณฑ์", "url": "/docs"},
 ];
 links.forEach(link => link.active = (link.url == "/") ? pathname == link.url : pathname.startsWith(link.url));
@@ -13,7 +13,7 @@ links.forEach(link => link.active = (link.url == "/") ? pathname == link.url : p
     <nav class="bg-white border-gray-200 py-2.5">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
             <a href="/" class="flex items-center">
-                <img src="images/0d007845765c05810395f1edda3254f7.jpeg_80x80q80.jpg_.webp" class="h-9 mr-3 sm:h-12" alt="GraphMe Logo" />
+                <img src="../images/0d007845765c05810395f1edda3254f7.jpeg_80x80q80.jpg_.webp" class="h-9 mr-3 sm:h-12" alt="GraphMe Logo" />
                 <span class="self-center text-xl font-['Hubot Sans'] font-semibold whitespace-nowrap">MAKINE FORCETECH</span>
             </a>
             

@@ -1,0 +1,50 @@
+---
+import Layout from '../../thLang/Layout-th.astro';
+import Faq from '../../thLang/pagePricing/Faq-th.astro';
+
+const plans = [
+    {
+        "name": "Team",
+        "price": 25,
+        "features": [
+            "25 users",
+            "Unlimited usage",
+        ],
+    },
+    {
+        "name": "Company",
+        "price": 50,
+        "features": [
+            "50 users",
+            "Unlimited usage",
+        ],
+    },
+    {
+        "name": "Enterprise",
+        "price": 100,
+        "features": [
+            "100 users",
+            "Unlimited usage",
+        ],
+    }
+];
+
+---
+
+<Layout title="GraphMe">
+    <section class="bg-white">
+        <div class="max-w-screen-xl mx-auto py-8 lg:py-16 px-4 lg:px-6">
+
+            <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                
+            </div>
+        </div>
+      </section>
+
+    <section class="bg-white">
+        <div class="max-w-screen-xl px-4 pb-8 mx-auto lg:pb-24 lg:px-6 ">
+            <Faq />
+        </div>
+    </section>
+    
+</Layout>
