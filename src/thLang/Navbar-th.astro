@@ -4,7 +4,7 @@ const links = [
     {"label": "หน้าหลัก", "url": "/th"},
     //{"label": "Changelog", "url": "/changelog"},
     {"label": "เกี่ยวกับ", "url": "/th/pricing"},
-    {"label": "ผลิตภัณฑ์", "url": "/docs"},
+    {"label": "ผลิตภัณฑ์", "url": "/th/docs"},
 ];
 links.forEach(link => link.active = (link.url == "/") ? pathname == link.url : pathname.startsWith(link.url));
 ---
