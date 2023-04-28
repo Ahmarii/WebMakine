@@ -1,7 +1,7 @@
 ---
 const pathname = Astro.url.pathname;
 const links = [
-    {"label": "หน้าหลัก", "url": "/th"},
+    {"label": "หน้าหลัก", "url": "/th/home"},
     //{"label": "Changelog", "url": "/changelog"},
     {"label": "เกี่ยวกับ", "url": "/th/pricing"},
     {"label": "ผลิตภัณฑ์", "url": "/th/docs"},
@@ -38,7 +38,7 @@ links.forEach(link => link.active = (link.url == "/") ? pathname == link.url : p
                             {!link.active && (
                                 <a href={link.url}
                                    class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-800 lg:p-0"
-                                >{link.label</a>
+                                >{link.label}</a>
                             )}
                         </li>   
                     ))}  
